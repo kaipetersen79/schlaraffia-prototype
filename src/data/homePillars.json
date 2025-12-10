@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Die Mitspieler",
+    "tagline": "Unsere Sassen",
+    "icon": "fa-solid fa-users",
+    "bgColor": "bg-[var(--schlaraffia-dark-blue)]",
+    "text": "Wer hinter der Flensburgia steckt – lern unsere Sassen kennen.",
+    "link": "/sassen-view"       
+  },
+  {
+    "title": "Das schlaraffische Spiel",
+    "tagline": "Sippungen",
+    "icon": "fa-solid fa-chess-knight",
+    "bgColor": "bg-[var(--schlaraffia-dark-yellow)]",
+    "text": "So läuft eine zünftige Sippung ab – Rituale, Humor und Klang.",
+    "link": "/sippungen"
+  },
+  {
+    "title": "Geschichte",
+    "tagline": "Historie",
+    "icon": "fa-solid fa-landmark",
+    "bgColor": "bg-[var(--schlaraffia-dark-red)]",
+    "text": "Von 1859 bis heute: die bewegte Historie der Flensburgia.",
+    "link": "/historie"
+  }
+]
+
+

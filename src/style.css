@@ -1,0 +1,1350 @@
+@import "tailwindcss";
+
+/* Farbvariablen für das Schlaraffia-Farbschema */
+:root {
+  --schlaraffia-blue: #2563EB;
+  --schlaraffia-red: #DC2626;
+  --schlaraffia-yellow: #F59E0B;
+  --schlaraffia-dark-blue: #1E40AF;
+  --schlaraffia-dark-red: #B91C1C;
+  --schlaraffia-dark-yellow: #D97706;
+}
+
+/* Grundlegende Schrift und Hintergrund für die Seite */
+body {
+  font-family: 'Spectral', serif;
+  background-color: #f8f5e6;
+  color: #333;
+}
+
+/* Stellt ein Hintergrundbild für eine Seite dar und sorgt für die richtige Positionierung und Helligkeit. */
+.page-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.85);
+}
+
+/* Großes, dekoratives Titel-Element mit Farbverlauf und Schatten für Seitenüberschriften. */
+.page-title {
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: 'Felipa', serif;
+  background: linear-gradient(to right, #fcd34d, #facc15);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+/* Untertitel unterhalb des Haupttitels mit Rahmen und Schlagschatten. */
+.page-undertitle {
+  font-size: 1.75rem;
+  margin-bottom: 5rem;
+  border-top: 2px solid #facc15;
+  border-bottom: 2px solid #facc15;
+  font-family: 'Felipa', serif;
+  display: inline-block;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  color: #ffffff;
+  text-shadow: 0 2px 8px #000;
+}
+
+/* Überschrift 2 für Seiten */
+h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Stil für kleinere Überschriften unterhalb des Haupttitels. */
+.page-subtitle {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: 'Felipa', serif;
+  color: #000;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Überschrift 3 für Unterabschnitte */
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Überschrift 4 für kleinere Abschnitte */
+h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Weißer, abgerundeter Container mit Schatten für allgemeine Inhaltsbereiche. */
+.container-basic {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Container mit maximaler Breite, zentriert und mit Padding für größere Inhaltsbereiche. */
+.container-basic-max-width64 {
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Container, der auf größeren Bildschirmen zwei Spalten einnimmt. */
+.container-basic-2-span {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  /* Container, der auf größeren Bildschirmen zwei Spalten einnimmt. */
+  .container-basic-2-span {
+    grid-column: span 2;
+  }
+}
+
+/* Karte mit Hover-Effekt für visuelle Hervorhebung von Inhalten. */
+.schlaraffia-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Hover-Effekt für Schlaraffia-Karten */
+.schlaraffia-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Basis-Stil für Schlaraffia-Buttons mit Animation und Großschreibung. */
+.btn-schlaraffia {
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+}
+
+.animated-divider {
+  border: none;
+  height: 8px;
+  background-image: linear-gradient(90deg, #D88F06, #E20613, #D88F06, #E20613, #D88F06);
+  background-size: 200% 100%;
+  animation: gradientShift 6s ease infinite;
+  background-repeat: no-repeat;
+}
+
+/* Hover-Effekt für Schlaraffia-Button */
+.btn-schlaraffia:hover {
+  transform: translateY(-2px);
+}
+
+/* Roter Button für wichtige Aktionen. */
+.btn-red {
+  background-color: var(--schlaraffia-red);
+  color: white;
+}
+
+/* Hover-Effekt für roten Button */
+.btn-red:hover {
+  background-color: var(--schlaraffia-dark-red);
+}
+
+/* Gelber Button für sekundäre Aktionen. */
+.btn-yellow {
+  background-color: var(--schlaraffia-yellow);
+  color: white;
+}
+
+/* Hover-Effekt für gelben Button */
+.btn-yellow:hover {
+  background-color: var(--schlaraffia-dark-yellow);
+}
+
+/* Dekorativer Rahmen mit Farbverlauf für besondere Bereiche. */
+.border-decorative {
+  border: 2px solid #8B4513;
+  border-image: linear-gradient(to right, #8B4513, #D2B48C, #8B4513) 1;
+}
+
+/* Navigationslink mit Hover- und Aktiv-Effekt. */
+.nav-link {
+  position: relative;
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+  font-size: 1.25rem;
+}
+
+/* Hover-Farbe für Navigationslink */
+.nav-link:hover {
+  color: var(--schlaraffia-yellow);
+}
+
+/* Unterstreichungseffekt für Navigationslink */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--schlaraffia-yellow);
+  transition: all 0.3s ease;
+}
+
+/* Unterstreichung bei Hover */
+.nav-link:hover::after {
+  width: 80%;
+  left: 10%;
+}
+
+/* Unterstreichung bei aktivem Link */
+.nav-link.active::after {
+  width: 80%;
+  left: 10%;
+}
+
+/* Container für den oberen Seitenbereich mit weißer Schrift. */
+.hero-section {
+  position: relative;
+  color: white;
+}
+
+/* Halbtransparente Überlagerung für den Hero-Bereich. */
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Einzelnes Element in einer Zeitachse. */
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+/* Vertikale Linie in der Mitte der Zeitachse. */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, #f59e0b, #d97706);
+  transform: translateX(-50%);
+  z-index: 0.5;
+}
+
+/* Markierungspunkt auf der Zeitachse. */
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  background: white;
+  border: 3px solid #f59e0b;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #d97706;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Linksbündiger Bereich für Timeline-Inhalte. */
+.timeline-content-left {
+  width: 45%;
+  padding-right: 2rem;
+  text-align: right;
+}
+
+/* Rechtsbündiger Bereich für Timeline-Inhalte. */
+.timeline-content-right {
+  width: 45%;
+  padding-left: 2rem;
+  margin-left: 55%;
+}
+
+/* Karte für Timeline-Einträge mit Farbverlauf und Schatten. */
+.timeline-card {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f59e0b;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover-Effekt für Timeline-Karte */
+.timeline-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  /* Anpassung der Timeline für kleine Bildschirme */
+  .timeline-content-left,
+  .timeline-content-right {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 3rem;
+    padding-right: 1rem;
+    text-align: left;
+  }
+
+  .timeline-dot {
+    left: 1rem;
+    transform: translateX(0);
+  }
+
+  .timeline-line {
+    left: 1rem;
+    transform: translateX(-50%);
+  }
+}
+
+/* Stil für hervorgehobene Zitate mit Farbverlauf und Rahmen. */
+.schlaraffia-quote {
+  background: linear-gradient(135deg, #f8f5e6, #fef9c3);
+  border-left: 4px solid var(--schlaraffia-yellow);
+  padding: 2rem;
+  border-radius: 8px;
+  font-style: italic;
+  font-family: 'Spectral', serif;
+  position: relative;
+  margin: 2rem 0;
+}
+
+/* Entfernte ungenutzte Klassen: container-blue-border, container-yellow-gradient, interactive-button, page-title-no-pic, ritual-element, sbox-inner, sbox-content, sbox-image, schlaraffia-box, sbox-bubble-top-right, sbox-bubble-bottom-left, gallery-item, honor-card, honor-card-info, chevron-icon */
+
+/* Benutzerdefinierte Scrollbar für Textboxen */
+.custom-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: #fef3c7;
+  border-radius: 8px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(120deg, #d97706, #fbbf24 80%);
+  border-radius: 8px;
+  border: 2px solid #fef3c7;
+  box-shadow: 0 1px 4px 0 rgba(180, 83, 9, 0.3);
+}
+
+/* Einzelner Glossareintrag mit Hover-Effekt. */
+.glossary-item {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem;
+}
+
+/* Hover-Effekt für Glossar-Eintrag */
+.glossary-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Begriff im Glossar, hervorgehoben. */
+.glossary-term {
+  font-weight: bold;
+  color: var(--schlaraffia-blue);
+}
+
+/* Definitionstext im Glossar, ein- und ausklappbar. */
+.glossary-definition {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+/* Aktive Definition im Glossar (sichtbar) */
+.glossary-definition.active {
+  max-height: 200px;
+  padding-top: 0.5rem;
+}
+
+/* Grundstil für Kalender-Tabellen. */
+.calendar {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Kopfzeile des Kalenders */
+.calendar th {
+  background-color: var(--schlaraffia-blue);
+  color: white;
+  font-weight: 600;
+}
+
+/* Zellen des Kalenders */
+.calendar td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+}
+
+/* Stil für einzelne Kalendereinträge. */
+.calendar-event {
+  background-color: var(--schlaraffia-light-yellow);
+  color: #333;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem 0;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  /* Timeline-Anpassungen für kleine Bildschirme */
+  .timeline::after {
+    left: 31px;
+  }
+
+  .timeline-container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .timeline-right {
+    left: 0%;
+  }
+
+  .timeline-container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  .timeline-left::after,
+  .timeline-right::after {
+    left: 15px;
+  }
+
+  .timeline-right::before {
+    left: 60px;
+  }
+}
+
+/* Container für animierte Sterne im Hintergrund. */
+.stars-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Einzelner animierter Stern für den Sterneneffekt. */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation-name: twinkle, float;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: normal, alternate;
+}
+
+/* Kleiner Stern */
+.star.small {
+  width: 2px;
+  height: 2px;
+}
+
+/* Mittlerer Stern */
+.star.medium {
+  width: 3px;
+  height: 3px;
+  box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.3);
+}
+
+/* Großer Stern */
+.star.large {
+  width: 4px;
+  height: 4px;
+  box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+
+  25% {
+    transform: translateY(-5px) translateX(3px);
+  }
+
+  50% {
+    transform: translateY(0) translateX(5px);
+  }
+
+  75% {
+    transform: translateY(5px) translateX(3px);
+  }
+
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* Dunkler, abgerundeter Container für Hero-Title. */
+.hero-title-container {
+  background-color: rgba(0, 0, 0, 0.35);
+  padding: 1rem 1rem;
+  border-radius: 0.9rem;
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+/* Abstand für Titel im Hero-Container */
+.hero-title-container .page-title {
+  margin-bottom: 0.75rem;
+}
+
+/* Abstand für Untertitel im Hero-Container */
+.hero-title-container .page-undertitle {
+  margin-bottom: 0.5rem;
+}
+
+/* Zentrierter Titel für Erinnerungen-Seiten. */
+.erinnerungen-title {
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+
+/* Container für auf- und zuklappbare Bereiche. */
+.collapsible-container {
+  max-width: 90%;
+  margin: 2rem auto;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #fde68a;
+}
+
+/* Kopfzeile eines aufklappbaren Bereichs mit Hover-Effekt. */
+.collapsible-header {
+  background: linear-gradient(to right, #fef3c7, #fde68a);
+  color: #92400e;
+  /* amber-800 für einen warmen Braunton */
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-radius: 0.5rem 0.5rem 0 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover-Effekt für Kopfzeile */
+.collapsible-header:hover {
+  background: linear-gradient(to right, #fde68a, #fcd34d);
+}
+
+/* Inhalt eines aufklappbaren Bereichs, ein- und ausklappbar. */
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+/* Sichtbarer Inhalt bei ausgeklapptem Zustand */
+.collapsible-content.expanded {
+  max-height: 2000px;
+  /* Genug Platz für den Inhalt */
+  padding: 1.5rem;
+  overflow-y: auto;
+  max-height: 70vh;
+  background-color: #fffbeb;
+  /* amber-50 für einen leichten warmen Hintergrund */
+}
+
+/* Stil für Text im Windjammer-Tab, warme Farbe und Zeilenhöhe. */
+.windjammer-text {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  color: #713f12;
+  /* amber-900 für einen warmen, gut lesbaren Text */
+  font-family: 'Spectral', serif;
+}
+
+/* Stil für Storybook-Textbereiche mit dekorativem Hintergrund. */
+.erinnerungen-storybook {
+  font-family: 'Felipa', serif;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #78350f;
+  /* Dunklere Textfarbe für besseren Kontrast auf gelblichem Hintergrund */
+  background-color: #fef9c3;
+  background-image:
+    linear-gradient(to bottom right, rgba(254, 243, 199, 0.9), rgba(254, 249, 195, 0.95), rgba(253, 230, 138, 0.8)),
+    repeating-linear-gradient(45deg, rgba(251, 191, 36, 0.03) 0px, rgba(251, 191, 36, 0.03) 2px, transparent 2px, transparent 4px),
+    repeating-linear-gradient(-45deg, rgba(217, 119, 6, 0.02) 0px, rgba(217, 119, 6, 0.02) 2px, transparent 2px, transparent 4px);
+  padding: 3rem;
+  border-radius: 0.75rem;
+  box-shadow:
+    inset 0 0 20px rgba(0, 0, 0, 0.15),
+    0 0 25px rgba(245, 158, 11, 0.2),
+    0 0 40px rgba(245, 158, 11, 0.1),
+    0 10px 15px -5px rgba(0, 0, 0, 0.1);
+  max-height: 650px;
+  overflow-y: auto;
+  position: relative;
+  border: 4px solid;
+  border-image: linear-gradient(135deg, #b45309, #d97706, #fbbf24, #fcd34d, #fbbf24, #d97706, #b45309) 1;
+  white-space: pre-line;
+  transition: all 0.5s ease;
+  z-index: 1;
+  width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: #d97706 #fef9c3;
+}
+
+/* Container für Storybook-Bereiche mit Schatten und Verlauf. */
+.erinnerungen-storybook-container {
+  position: relative;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  box-shadow: 0 0 30px rgba(217, 119, 6, 0.1);
+  border-radius: 1rem;
+  background: linear-gradient(to bottom, rgba(254, 249, 195, 0.2), transparent);
+}
+
+/* Dekorative Überlagerung für Storybook. */
+.erinnerungen-storybook::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(251, 191, 36, 0.15) 0px, transparent 60px),
+    radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.15) 0px, transparent 60px),
+    radial-gradient(circle at 40% 70%, rgba(251, 191, 36, 0.15) 0px, transparent 60px),
+    radial-gradient(circle at 70% 90%, rgba(251, 191, 36, 0.15) 0px, transparent 60px);
+  opacity: 1;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Partikel-Effekt für Storybook. */
+.erinnerungen-storybook::after {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(251, 191, 36, 0.15) 0%, transparent 25%),
+    radial-gradient(circle at 80% 30%, rgba(251, 191, 36, 0.15) 0%, transparent 25%),
+    radial-gradient(circle at 40% 80%, rgba(251, 191, 36, 0.15) 0%, transparent 25%),
+    radial-gradient(circle at 90% 90%, rgba(251, 191, 36, 0.15) 0%, transparent 25%);
+  filter: blur(6px);
+  opacity: 0.8;
+  animation: pulse 8s ease-in-out infinite alternate;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 1.5rem;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+    filter: blur(4px);
+  }
+
+  50% {
+    opacity: 0.7;
+    filter: blur(5px);
+  }
+
+  100% {
+    opacity: 0.3;
+    filter: blur(4px);
+  }
+}
+
+/* Container für Windjammer-Inhalte, linksbündig. */
+.windjammer-content {
+  text-align: left;
+}
+
+/* Stil für Titel im Windjammer-Tab. */
+.windjammer-content .erinnerungen-vintage-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+/* Dekorative Linie unter dem Titel im Windjammer-Tab. */
+.windjammer-content .erinnerungen-vintage-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d97706, transparent);
+}
+
+/* Stil für Zitate im Windjammer-Tab. */
+.windjammer-content .erinnerungen-vintage-quote {
+  border-left: 4px solid #fbbf24;
+  padding-left: 1.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  position: relative;
+  background-color: rgba(254, 249, 195, 0.5);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+/* Anführungszeichen für Zitate im Windjammer-Tab. */
+.windjammer-content .erinnerungen-vintage-quote::before,
+.windjammer-content .erinnerungen-vintage-quote::after {
+  content: '"';
+  font-size: 3rem;
+  color: #b45309;
+  opacity: 0.3;
+  position: absolute;
+  line-height: 1;
+}
+
+/* Anführungszeichen oben links */
+.windjammer-content .erinnerungen-vintage-quote::before {
+  top: 0;
+  left: 5px;
+}
+
+/* Anführungszeichen unten rechts */
+.windjammer-content .erinnerungen-vintage-quote::after {
+  bottom: -10px;
+  right: 5px;
+}
+
+/* Stil für Listenpunkte im Windjammer-Tab. */
+.windjammer-content .erinnerungen-vintage-list-item {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+/* Hover-Effekt für Listenpunkt */
+.windjammer-content .erinnerungen-vintage-list-item:hover {
+  transform: translateX(5px);
+}
+
+/* Stil für Signaturen im Windjammer-Tab. */
+.windjammer-content .erinnerungen-vintage-signature {
+  color: #b45309;
+  font-family: 'Felipa', cursive;
+  font-size: 1.4rem;
+}
+
+/* Verbesserte Tab-Buttons */
+.erinnerungen-storybook-container .flex {
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+  position: relative;
+  z-index: 5;
+}
+
+/* Tab-Button für Erinnerungen-Abschnitte mit Hover- und Aktiv-Effekt. */
+.erinnerungen-tab-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem 0.75rem 0 0;
+  border: 1px solid #fde68a;
+  border-bottom: none;
+  background: linear-gradient(to bottom, #fef3c7, #fde68a);
+  color: #92400e;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  top: 1px;
+  margin: 0 0.5rem -1px 0.5rem;
+  box-shadow: 0 -4px 10px rgba(245, 158, 11, 0.2);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+  min-width: 180px;
+  text-align: center;
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Dekorative Linie oben im Tab-Button. */
+.erinnerungen-tab-button::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FFD700, #D90429, #FFD700);
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover-Effekt für Tab-Button */
+.erinnerungen-tab-button:hover {
+  background: linear-gradient(to bottom, #fde68a, #fcd34d);
+  transform: translateY(-3px);
+  box-shadow: 0 -6px 12px rgba(245, 158, 11, 0.3);
+}
+
+/* Dekorative Linie bei Hover */
+.erinnerungen-tab-button:hover::before {
+  opacity: 1;
+}
+
+/* Aktiver Tab-Button */
+.erinnerungen-tab-button.active {
+  background: linear-gradient(to bottom, #fbbf24, #fef9c3);
+  border-bottom: 1px solid #fef9c3;
+  font-weight: 700;
+  transform: translateY(-4px);
+  box-shadow: 0 -8px 15px rgba(245, 158, 11, 0.35);
+}
+
+/* Dekorative Linien links und rechts bei aktivem Tab-Button. */
+.erinnerungen-tab-button.active::before,
+.erinnerungen-tab-button.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(251, 191, 36, 0.7), transparent);
+  opacity: 0.7;
+  filter: blur(1px);
+}
+
+/* Linke Linie */
+.erinnerungen-tab-button.active::before {
+  left: 0;
+}
+
+/* Wrapper für Tab-Buttons mit dekorativer Linie. */
+.erinnerungen-tabs-wrapper {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Dekorative Linie unter Tabs. */
+.erinnerungen-tabs-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(217, 119, 6, 0.3), transparent);
+}
+
+/* Container für Schriftart-Umschalter. */
+.font-style-toggle {
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+
+/* Button zum Umschalten der Schriftart im Storybook. */
+.font-style-button {
+  background: linear-gradient(to bottom, #fef3c7, #fde68a);
+  border: 1px solid #d97706;
+  color: #92400e;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 -2px 8px rgba(245, 158, 11, 0.15);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin-right: 1rem;
+}
+
+/* Hover-Effekt für Schriftart-Button */
+.font-style-button:hover {
+  background: linear-gradient(to bottom, #fde68a, #fcd34d);
+  transform: translateY(-2px);
+  box-shadow: 0 -4px 10px rgba(245, 158, 11, 0.2);
+}
+
+/* Aktiver Effekt für Schriftart-Button */
+.font-style-button:active {
+  transform: translateY(0);
+  box-shadow: 0 -1px 4px rgba(245, 158, 11, 0.1);
+}
+
+/* Hover-Effekt für Schriftart-Button (Variante) */
+.font-style-button:hover {
+  background: linear-gradient(to bottom, #fde68a, #fcd34d);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(217, 119, 6, 0.3), inset 0 1px 3px rgba(255, 255, 255, 0.6);
+}
+
+/* Aktiver Effekt für Schriftart-Button (Variante) */
+.font-style-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Normale Schriftart für bessere Lesbarkeit */
+.erinnerungen-storybook.font-normal {
+  font-family: Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Normale Schrift für Windjammer-Text und Listen */
+.erinnerungen-storybook.font-normal .windjammer-content p,
+.erinnerungen-storybook.font-normal .windjammer-content li {
+  font-family: Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Normale Schrift für Windjammer-Titel */
+.erinnerungen-storybook.font-normal .windjammer-content .erinnerungen-vintage-title {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Normale Schrift für Windjammer-Zitat */
+.erinnerungen-storybook.font-normal .windjammer-content .erinnerungen-vintage-quote {
+  font-family: Arial, sans-serif;
+  font-style: italic;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+/* Normale Schrift für Windjammer-Signatur */
+.erinnerungen-storybook.font-normal .windjammer-content .erinnerungen-vintage-signature {
+  font-family: Arial, sans-serif;
+  font-style: italic;
+  color: #333;
+}
+
+/* Flex-Container für Tab-Elemente. */
+.tabs-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Flexbox für Tab-Buttons im Tab-Wrapper. */
+.erinnerungen-tabs-wrapper .flex {
+  padding: 0.5rem 1rem;
+  align-items: center;
+}
+
+/* Ehrenschlaraffen Styles */
+/* Animations for intro container */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes underlineAnimation {
+  0% {
+    background-size: 0% 3px;
+  }
+
+  100% {
+    background-size: 100% 3px;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+
+  50% {
+    transform: translateY(0) translateX(10px);
+  }
+
+  75% {
+    transform: translateY(10px) translateX(5px);
+  }
+
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes floatReverse {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+
+  25% {
+    transform: translateY(10px) translateX(-5px);
+  }
+
+  50% {
+    transform: translateY(0) translateX(-10px);
+  }
+
+  75% {
+    transform: translateY(-10px) translateX(-5px);
+  }
+
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pingSlow {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 2px rgba(79, 70, 229, 0.4));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 10px rgba(79, 70, 229, 0.7));
+  }
+
+  100% {
+    filter: drop-shadow(0 0 2px rgba(79, 70, 229, 0.4));
+  }
+}
+
+.animated-divider {
+  border: none;
+  height: 8px;
+  background-image: linear-gradient(90deg, #D88F06, #E20613, #D88F06, #E20613, #D88F06);
+  background-size: 200% 100%;
+  animation: gradientShift 6s ease infinite;
+  background-repeat: no-repeat;
+}
+
+.intro-container {
+  box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.2), 0 10px 10px -5px rgba(220, 38, 38, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.1);
+  transition: all 0.5s ease;
+}
+
+.intro-container:hover {
+  box-shadow: 0 20px 40px -5px rgba(245, 158, 11, 0.3), 0 15px 20px -5px rgba(220, 38, 38, 0.2);
+  transform: translateY(-8px);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.slide-in {
+  transform-origin: center;
+  animation: slideIn 1.5s ease forwards;
+}
+
+.underline-animation {
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.floating-element {
+  animation: float 8s ease-in-out infinite;
+}
+
+.floating-element-reverse {
+  animation: floatReverse 10s ease-in-out infinite;
+}
+
+.bounce-animation {
+  animation: bounce 3s ease-in-out infinite;
+}
+
+.animate-ping-slow {
+  animation: ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce 3s infinite;
+}
+
+@keyframes ping {
+
+  75%,
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Floating elements animations für UeberUns */
+.ritter-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ritter-card .overflow-hidden img {
+  filter: brightness(0.95);
+  transition: filter 0.5s, transform 0.5s;
+}
+
+.ritter-card:hover .overflow-hidden img {
+  transform: scale(1.1);
+  filter: brightness(1.05);
+}
+
+.ritter-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Sippungs-Karten */
+.sippung-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+
+.sippung-image {
+  height: 200px;
+  background: linear-gradient(135deg, #fef9c3, #fde68a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: var(--schlaraffia-red);
+}
+
+.interactive-button {
+  background: linear-gradient(135deg, var(--schlaraffia-yellow), var(--schlaraffia-dark-yellow));
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sippungen-hero-section {
+  background: linear-gradient(135deg, #7c3aed, #dc2626);
+}
+
+ Hover-Effekte für Sippungs-Karten 
+.sippung-card:hover .sippung-image {
+  transform: scale(1.05);
+}
+
+.sippung-card:hover .sippung-image i {
+  transform: rotate(15deg) scale(1.1);
+  transition: transform 0.3s ease;
+}
+/* Floating Elements - Globale Animationen */
+.floating-element {
+  animation: floating 6s ease-in-out infinite;
+}
+
+.floating-element-reverse {
+  animation: floating-reverse 8s ease-in-out infinite;
+}
+
+.floating-element-delay {
+  animation: floating 8s ease-in-out 2s infinite;
+}
+
+@keyframes floating {
+
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(15px, 15px) rotate(5deg);
+  }
+
+  50% {
+    transform: translate(0, 25px) rotate(0deg);
+  }
+
+  75% {
+    transform: translate(-15px, 10px) rotate(-5deg);
+  }
+}
+
+@keyframes floating-reverse {
+
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(-10px, -10px) rotate(-5deg);
+  }
+
+  50% {
+    transform: translate(0, -15px) rotate(0deg);
+  }
+
+  75% {
+    transform: translate(10px, -5px) rotate(5deg);
+  }
+}
+
+.ueberuns-hero-section {
+  position: relative;
+  color: white;
+  background-size: cover;
+  background-position: center;
+}
