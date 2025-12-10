@@ -21,7 +21,7 @@
         <div class="flex justify-center mb-4 relative z-10">
           <div class="relative logo-container">
             <div class="absolute inset-0 bg-white rounded-full opacity-30 animate-ping-slow"></div>
-            <img src="/src/assets/logo.png" alt="Schlaraffia Logo"
+            <img src="@/assets/logo.png" alt="Schlaraffia Logo"
               class="h-24 object-contain hover:scale-110 transition-transform duration-300 logo-glow">
           </div>
         </div>
@@ -161,7 +161,7 @@ onMounted(() => {
       name: daten.name,
       titel: daten.titel,
       beschreibung: daten.beschreibung,
-      bildUrl: `src/assets/UeberUns/gruender/${i}.png`
+      bildUrl: new URL(`../assets/UeberUns/gruender/${i}.png`, import.meta.url).href
     });
   }
 })

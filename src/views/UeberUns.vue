@@ -40,7 +40,7 @@
           <!-- Logo und Einführungstext -->
           <div class="flex flex-col md:flex-row items-center mb-8">
             <div class="md:w-1/4 mb-6 md:mb-0 text-center">
-              <img src="/src/assets/logo.png" alt="Schlaraffia Wappen" class="mx-auto h-32 md:h-40 object-contain"
+              <img src="@/assets/logo.png" alt="Schlaraffia Wappen" class="mx-auto h-32 md:h-40 object-contain"
                 data-aos="zoom-in" data-aos-delay="300">
             </div>
             <div class="md:w-3/4 md:pl-8">
@@ -114,8 +114,8 @@
         <div class="ritter-card">
           <div class="overflow-hidden bg-white rounded-xl shadow-lg">
             <div class="overflow-hidden" style="height: 380px;">
-              <img src="/src/assets/UeberUns/gruender/1.png" alt="Gründerväter" class="w-full h-full object-cover"
-                onerror="this.src='/src/assets/BackgroundImages/IMG_4317-1920w.webp'"
+              <img src="@/assets/UeberUns/gruender/1.png" alt="Gründerväter" class="w-full h-full object-cover"
+                onerror="this.src=require('@/assets/BackgroundImages/IMG_4317-1920w.webp')"
                 style="object-position: center 25%;">
             </div>
             <div class="border-b-4 text-[var(--schlaraffia-dark-yellow)]"></div>
@@ -136,8 +136,8 @@
         <div class="ritter-card">
           <div class="overflow-hidden bg-white rounded-xl shadow-lg">
             <div class="overflow-hidden" style="height: 380px;">
-              <img src="/src/assets/UeberUns/ehrenschlaraffen/6.png" alt="Ehrenschlaraffen"
-                class="w-full h-full object-cover" onerror="this.src='/src/assets/BackgroundImages/IMG_4317-1920w.webp'"
+              <img src="@/assets/UeberUns/ehrenschlaraffen/6.png" alt="Ehrenschlaraffen"
+                class="w-full h-full object-cover" onerror="this.src=require('@/assets/BackgroundImages/IMG_4317-1920w.webp')"
                 style="object-position: center 25%;">
             </div>
             <div class="border-b-4 text-[var(--schlaraffia-dark-blue)]"></div>
@@ -158,8 +158,8 @@
         <div class="ritter-card">
           <div class="overflow-hidden bg-white rounded-xl shadow-lg">
             <div class="overflow-hidden" style="height: 380px;">
-              <img src="/src/assets/UeberUns/sassen/1.webp" alt="Aktive Sassen" class="w-full h-full object-cover"
-                onerror="this.src='/src/assets/BackgroundImages/IMG_4317-1920w.webp'"
+              <img src="@/assets/UeberUns/sassen/1.webp" alt="Aktive Sassen" class="w-full h-full object-cover"
+                onerror="this.src='@/assets/BackgroundImages/IMG_4317-1920w.webp'"
                 style="object-position: center 25%;">
             </div>
             <div class="border-b-4 text-[var(--schlaraffia-dark-red)]"></div>
@@ -208,7 +208,7 @@
           <div class="md:w-1/3 mt-8 md:mt-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="relative">
               <div class="absolute inset-0 bg-white rounded-full opacity-30 animate-ping-slow"></div>
-              <img src="/src/assets/logo.png" alt="Schlaraffia Wappen"
+              <img src="@/assets/logo.png" alt="Schlaraffia Wappen"
                 class="mx-auto h-48 object-contain hover:scale-105 transition-transform duration-300 relative z-10">
             </div>
           </div>

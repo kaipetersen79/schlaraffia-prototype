@@ -21,11 +21,11 @@
         </div>
         <!-- Logo -->
         <div class="flex flex-col items-center justify-center">
-          <img
-            src="/src/assets/logo.png"
-            alt="Schlaraffia Flensburgia Logo"
-            class="w-40 h-40 object-contain mb-4 bg-transparent shadow-none border-none rounded-none border-4 border-white"
-          />
+              <img
+                src="@/assets/logo.png"
+                alt="Schlaraffia Flensburgia Logo"
+                class="w-40 h-40 object-contain mb-4 bg-transparent shadow-none border-none rounded-none border-4 border-white"
+              />
         </div>
         <!-- Kontakt -->
         <div>

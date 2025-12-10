@@ -41,7 +41,7 @@
           <div class="flex flex-col md:flex-row items-center mb-10 gap-8">
             <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center relative group">
               <img 
-                src="/src/assets/logo.png" 
+                src="@/assets/logo.png" 
                 alt="Schlaraffia Wappen" 
                 class="mx-auto h-28 md:h-36 object-contain transition-transform duration-300 hover:scale-105"
                 data-aos="zoom-in" data-aos-delay="200"

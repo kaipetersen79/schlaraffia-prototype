@@ -28,7 +28,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),  
+  history: createWebHistory('/schlaraffia-prototype/'), 
   routes,  
   scrollBehavior(to, from, savedPosition) {
     return { top: 0 }  
