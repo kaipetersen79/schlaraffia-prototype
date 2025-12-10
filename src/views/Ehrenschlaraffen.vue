@@ -194,7 +194,7 @@ onMounted(() => {
       titel: daten.titel,
       beschreibung: daten.beschreibung,
       jahr: daten.jahr,
-      bildUrl: `src/assets/UeberUns/ehrenschlaraffen/${i}.png`
+      bildUrl: new URL(`../assets/UeberUns/ehrenschlaraffen/${i}.png`, import.meta.url).href
     });
   }
 })

@@ -41,7 +41,7 @@
 
         <!-- Download-Links für Eintrittsliste und Statuten -->
         <div class="flex justify-center gap-6 mt-8 mb-12">
-            <a href="Schlaraffia/public/Einritt-Liste165-3313-.docx" download
+            <a href="/Einritt-Liste165-3313-.docx" download
                 class="bg-gradient-to-r from-amber-100 to-yellow-200 hover:from-amber-200 hover:to-yellow-300 text-amber-800 px-5 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center">
                 <i class="fas fa-download mr-2"></i> Eynritts-Liste herunterladen
             </a>
@@ -80,19 +80,13 @@
                         </div>
                         
                         <!-- Font-Style Schalter -->
-                        <div class="font-style-toggle">
-                            <button @click="toggleFontStyle" class="font-style-button" :title="fontStyle === 'rollenspiel' ? 'Auf normale Schrift umschalten' : 'Auf Rollenspiel-Schrift umschalten'">
-                                <i class="fas fa-font mr-1"></i>
-                                {{ fontStyle === 'rollenspiel' ? 'Normal' : 'Rollenspiel' }}
-                            </button>
-                        </div>
                     </div>
                 </div>                <!-- Textbox im Storybook-Stil mit Sternen-Effekt -->
-                <div class="erinnerungen-storybook relative" ref="textContainer" :class="{ 'font-normal': fontStyle === 'normal' }">
-                    <div class="stars-container" ref="storyStarsContainer"></div>
-                    <div v-if="activeButton === 'block3'" v-html="formatWindjammerText()" class="windjammer-content"></div>
-                    <template v-else>{{ selectedText }}</template>
-                </div>
+                    <div class="erinnerungen-storybook relative" ref="textContainer">
+                        <div class="stars-container" ref="storyStarsContainer"></div>
+                        <div v-if="activeButton === 'block3'" v-html="formatWindjammerText()" class="windjammer-content"></div>
+                        <div v-else style="white-space: pre-wrap;">{{ selectedText }}</div>
+                    </div>
             </div>
         </div>
           <div class="erinnerungen-animated-trenner">
@@ -119,15 +113,15 @@ const fontStyle = ref('rollenspiel') // Neue Variable für die Schriftauswahl
 async function loadTextFiles() {
     try {
         // Laden der Laudatio Ritter Siam
-        const siamResponse = await fetch('/src/assets/History/texts/laudatio_ritter_siam.txt')
+        const siamResponse = await fetch(new URL('../assets/History/texts/laudatio_ritter_siam.txt', import.meta.url).href)
         block1.value = await siamResponse.text()
 
         // Laden der Laudatio Rt. Pedro Nero
-        const pedroResponse = await fetch('/src/assets/History/texts/laudatio_pedro_nero.txt')
+        const pedroResponse = await fetch(new URL('../assets/History/texts/laudatio_pedro_nero.txt', import.meta.url).href)
         block2.value = await pedroResponse.text()
 
         // Laden des Windjammer-Textes
-        const windjammerResponse = await fetch('/src/assets/History/texts/windjammer.txt')
+        const windjammerResponse = await fetch(new URL('../assets/History/texts/windjammer.txt', import.meta.url).href)
         windjammerText.value = await windjammerResponse.text()
 
         // Standardmäßig den ersten Text anzeigen

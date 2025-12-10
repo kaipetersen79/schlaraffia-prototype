@@ -193,7 +193,7 @@ onMounted(() => {
       name: daten.name,
       titel: daten.titel,
       funktion: daten.funktion,
-      bildUrl: `src/assets/UeberUns/sassen/${i}.webp`
+      bildUrl: new URL(`../assets/UeberUns/sassen/${i}.webp`, import.meta.url).href
     });
   }
 })
